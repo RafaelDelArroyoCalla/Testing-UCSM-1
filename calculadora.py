@@ -10,8 +10,9 @@ def calculadora(operacion:str, *parametros:tuple[int,...] ) -> int:
 
     elif operacion == 'RESTA':
         resultado = parametros[0]
-        for numero in parametros[1:]:
-            resultado -= numero
+        if(len(parametros) != 1):
+            for numero in parametros[1:]:
+                resultado -= numero
 
     else:
         raise 'Operacion incorrecta'
